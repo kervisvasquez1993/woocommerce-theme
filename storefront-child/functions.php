@@ -146,5 +146,11 @@ function titulo_contenido_tab($titulo){
 add_filter( 'woocommerce_get_price_html', 'cantidad_ahorrada',10,2 );
 
 function cantidad_ahorrada($precio, $producto){
-    echo 'hola';
+   if($producto->sale_price){
+       $ahorro = wc_price($producto->regular_price -$producto->sale_price);
+       return $precio.sprintf(__('<span class="ahorro"> Ahorro %s </span>', 'woocommerce'), $ahorro);
+
+   }
+
+   return $precio;
 }
