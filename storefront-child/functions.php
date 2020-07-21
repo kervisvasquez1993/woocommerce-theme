@@ -142,7 +142,7 @@ function titulo_contenido_tab($titulo){
 }
 
 //retornar ahorro 
-
+/*
 add_filter( 'woocommerce_get_price_html', 'cantidad_ahorrada',10,2 );
 
 function cantidad_ahorrada($precio, $producto){
@@ -154,3 +154,15 @@ function cantidad_ahorrada($precio, $producto){
 
    return $precio;
 }
+*/
+
+add_filter( 'woocommerce_get_price_html', 'cantidad_ahorrada_porcentaje',10,2 );
+function cantidad_ahorrada_porcentaje($precio, $producto){
+    if($producto->sale_price){
+        $procentaje = round((($producto->regular_price - $producto->sale_price)/ $producto->regular_price)*100);
+        return $precio.sprintf(__('<span class="ahorro"> Ahorro %s &#37</span>', 'woocommerce'), $procentaje);
+ 
+    }
+ 
+    return $precio;
+ }
