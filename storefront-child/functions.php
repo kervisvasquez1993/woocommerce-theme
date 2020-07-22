@@ -62,7 +62,7 @@ function nueva_section_home(){
     
 }
 //agregar imagen al homepage
-function descuento(){
+/*function descuento(){
         $imagen = '<div class="destacada">';
         $imagen.='<img src="'.get_stylesheet_directory_uri().'/img/cupon.jpg">';
         $imagen .='</div>';
@@ -70,7 +70,7 @@ function descuento(){
 }
 
 add_action( 'homepage', 'descuento',5);
-
+*/
 
 //filtrar 4 categoria en el front page
 
@@ -166,3 +166,20 @@ function cantidad_ahorrada_porcentaje($precio, $producto){
  
     return $precio;
  }
+
+ // imprimir subtitulo con acf
+ add_action( 'woocommerce_single_product_summary', 'imprimiracf', 6 );
+
+ function imprimiracf(){
+     global $post;
+     echo "<p class='subtitulo'>".get_field('subtitulo', $post->ID)."</p>";
+ }
+
+
+ //imprime shortcode con slider
+
+ function test_shortcode(){
+    echo do_shortcode( '[wcslider]');
+}
+
+add_action( 'homepage', 'test_shortcode',5);

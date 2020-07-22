@@ -16,7 +16,12 @@
     width: 20% !important;
 }
 
-
+.subtitulo{
+  font-size: 20px;
+  font-style: italic;
+  
+  color: #333333;
+}
 
 .site-header .site-branding img{
     height: auto;
@@ -81,9 +86,13 @@ ul.menu, .main-navigation ul.nav-menu{
     float: left;
   }
 
-  .spa-en-casa .products{
+  .spa-en-casa .productos{
       width: 35%;
       float: right;
+  }
+
+  .spa-en-casa .productos ul.products li.product{
+    width: 70%;
   }
 
 }
