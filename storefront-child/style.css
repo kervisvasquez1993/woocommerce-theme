@@ -10,7 +10,33 @@
 */
 
 
+ 
+.site-header .col-full{
+  
+}
 
+ .menu-item-type-custom a {
+  font-size: 25px;
+  color: black;
+ }
+
+ .col-full{
+   color:red !important;
+ }
+
+ .secondary-navigation a[href*="facebook.com"]:after {
+   color: blue !important;
+ }
+
+ .secondary-navigation a[href*="instagram.com"]:after{
+   color: black !important;
+ }
+
+ 
+
+ .primary-navigation{
+  
+ }
 .site-branding{
     
     width: 20% !important;
@@ -50,10 +76,44 @@
 
 
 
+.main-navigation ul.menu ul.sub-menu{
+  border-radius: 2px solid blue;
+}
 /*fin del movile*/
 
 
+
+
 @media (min-width: 768px){
+
+  .storefront-primary-navigation{
+    background: grey;
+    padding: 20px 0  ;
+  }
+
+  .main-navigation ul.menu ul.sub-menu{
+    background: grey;
+  }
+  ul.menu, .main-navigation ul.nav-menu {
+    max-width: 85vw;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+
+.main-navigation ul.menu > li > a, .main-navigation ul.nav-menu > li > a{
+  padding: 1px !important;
+  font-weight: bold;
+}
+  .site-header .col-full{
+   
+    display: flex !important;
+    align-items: center;
+  }
+  .menu-item{
+    color: blue !important;
+  }
   .reservados{
     background: black;
         padding: 2rem 0;
@@ -64,6 +124,7 @@
 
 ul.menu, .main-navigation ul.nav-menu{
   width: 100vw;
+  
 }
 /*nueva seccion homepage*/
 
@@ -73,6 +134,8 @@ ul.menu, .main-navigation ul.nav-menu{
 
 }
 }
+
+
 
 @media (min-width: 992px)
 {

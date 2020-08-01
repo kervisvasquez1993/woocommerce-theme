@@ -5,6 +5,7 @@
 
 function script_hijos(){
     wp_enqueue_script( 'script-hijo', get_stylesheet_directory_uri().'/script_children.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'swiperjs','https://unpkg.com/swiper/swiper-bundle.min.js', array(), '1.0.0', true );
 
 }
 add_action( 'wp_enqueue_scripts', 'script_hijos');
@@ -14,7 +15,7 @@ add_filter( 'woocommerce_currency_symbol', 'carolinaspan_mx',10, 2);
 
 
 function carolinaspan_mx($simbolo,$moneda){
-    $simbolo = 'MXN $';
+    $simbolo = '$';
     return $simbolo;
 
 }
@@ -86,7 +87,7 @@ add_filter( 'storefront_product_categories_args', 'categoria_frontpage',100 );
 add_filter( 'loop_shop_per_page', 'productos_por_pagina', 20);
 
 function productos_por_pagina($productos){
-    $productos = 6;
+    $productos = 20;
     return $productos;
 
 }

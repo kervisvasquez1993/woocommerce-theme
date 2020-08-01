@@ -13,6 +13,8 @@
  */
 
 get_header(); ?>
+<!--cabecera-->
+<h1>hola desde cabecera</h1>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
