@@ -1,7 +1,7 @@
 <?php
 //remove_action( do_action, hoot,10);
 // get_styleshett_direcrory_uri() para llamar los script del hijo 
-
+require_once dirname( __FILE__ ).'/cmb2.php';
 
 function script_hijos(){
     

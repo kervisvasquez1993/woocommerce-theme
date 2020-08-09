@@ -11,7 +11,7 @@
  *
  * @package storefront
  */
-
+$imagenes = get_post_meta( get_the_ID(), '',true );
 get_header(); ?>
 </div>
 
