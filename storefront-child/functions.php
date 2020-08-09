@@ -4,8 +4,13 @@
 
 
 function script_hijos(){
-    wp_enqueue_script( 'script-hijo', get_stylesheet_directory_uri().'/script_children.js', array(), '1.0.0', true );
+    
     wp_enqueue_script( 'swiperjs','https://unpkg.com/swiper/swiper-bundle.min.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'script-hijo', get_stylesheet_directory_uri().'/script.js', array('swiperjs'), '1.0.0', true );
+    //wp_enqueue_script( 'bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', array(), '1.0.0', true );
+   
+    //wp_enqueue_script( 'popper','https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', array('jquery'), '1.0.0', true );
+    //wp_enqueue_script( 'bootstrap','https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js', array('popper'), '1.0.0', true );
 
 }
 add_action( 'wp_enqueue_scripts', 'script_hijos');
@@ -177,10 +182,50 @@ function cantidad_ahorrada_porcentaje($precio, $producto){
  }
 
 
- //imprime shortcode con slider
+    
+    
+    function wcslider_kervis(){
+        $arg = array(
+            'posts_per_page' => 10,
+            'post_type' =>'product',
+            'tax_query' => array(
+                array(
+                    'taxonomy'=>'product_visibility',
+                    'field' => 'name',
+                    'terms' => 'featured',
+                    'operator' => 'IN'
+                ),
+            ),
+    
+        );
+    
+        $slider_productos = new WP_Query($arg);
+        echo " <div class='swiper-container'>";
+        echo "<ul class='swiper-wrapper'>";
+         while($slider_productos->have_posts()):
+            
+           $slider_productos->the_post();
+           ?>
+                <li class="swiper-slide">
+                   <a href="<?php the_permalink();?>">
+                       <?php the_post_thumbnail('shop_catalog');?>
+                       <?php the_title('<h4>','</h4>');?>
+                   </a>
+                </li>
+           <?php 
+           
+         endwhile; wp_reset_postdata();
+         echo "</ul>";
+         
+         ?>
+           <!--navegador-->
+           <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+        </div>
 
- function test_shortcode(){
-    echo do_shortcode( '[wcslider]');
+                <?php
+         
+
 }
 
-add_action( 'homepage', 'test_shortcode',5);
+add_action( 'homepage', 'wcslider_kervis',5);

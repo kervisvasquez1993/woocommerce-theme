@@ -13,9 +13,49 @@
  */
 
 get_header(); ?>
-<!--cabecera-->
-<h1>hola desde cabecera</h1>
+</div>
 
+<div id="carouselExampleCaptions" class="carousel slide slider-cabecera" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="<?php the_field('imagen-producto1');?>" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="titulo_principal">First slide label</h5>
+            <p class="parrafo">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="<?php the_field('imagen-producto2');?>" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="titulo_principal">Second slide label</h5>
+            <p class="parrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="<?php the_field('imagen-producto3');?>" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="titulo_principal">Third slide label</h5>
+            <p class="parrafo">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    
+
+        
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -38,5 +78,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 <?php
 
-echo "hola";
+
 get_footer();

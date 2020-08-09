@@ -10,11 +10,31 @@
 */
 
 
+.b-1{
+  background: #D3424D !important;
+}
+.b-2{
+  background: #FFBAC0;
+}
+.b-3{
+  background: #D4858C;
+}
+.b-4{
+  background: #3A874C;
+}
+.b-5{
+  background: #85D498;
+}
  
 .site-header .col-full{
   
 }
 
+.slider-cabecera{
+  min-height: 20vh !important;
+  background: grey;
+  
+}
  .menu-item-type-custom a {
   font-size: 25px;
   color: black;
@@ -82,17 +102,50 @@
 /*fin del movile*/
 
 
+.titulo_principal{
+  font-size: 3.5rem !important;
+  color: black;
+  font-weight: bold;
+}
+.parrafo{
+  font-size: 20px;
+  color:black;
+}
 
+.header1{
+  background: red;
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 5vh;
+}
+.header1 .wrapp-icon{
+  display: table;
+}
+
+.font-header{
+  display: table-cell;
+    vertical-align: middle;
+}
 
 @media (min-width: 768px){
-
+  .header1{
+   justify-content: flex-end;
+   background: blue;
+ }
+ .header1 .wrapp-icon{
+   padding: 0 20px;
+ 
+   align-items: center;
+ }
   .storefront-primary-navigation{
-    background: grey;
+    
     padding: 20px 0  ;
   }
 
   .main-navigation ul.menu ul.sub-menu{
-    background: grey;
+    
   }
   ul.menu, .main-navigation ul.nav-menu {
     max-width: 85vw;
@@ -107,7 +160,7 @@
   font-weight: bold;
 }
   .site-header .col-full{
-   
+    max-height: 10vh;
     display: flex !important;
     align-items: center;
   }
