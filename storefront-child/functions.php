@@ -13,6 +13,16 @@ function script_hijos(){
     //wp_enqueue_script( 'bootstrap','https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js', array('popper'), '1.0.0', true );
 
 }
+
+function bootstrap(){
+	wp_enqueue_style('swippercss','https://unpkg.com/swiper/swiper-bundle.min.css' , array(), '4.5.0', 'all');
+    wp_enqueue_style('bootstra','https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' , array(), '4.5.0', 'all');
+	wp_enqueue_script( 'popper','https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', array('jquery'), '4.5.0', true );
+    wp_enqueue_script( 'bootstrap','https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js', array('popper'), '4.5.0', true );
+   
+}
+
+add_action( 'wp_enqueue_scripts', 'bootstrap');
 add_action( 'wp_enqueue_scripts', 'script_hijos');
 
 // cambiar a pesos mexicanos
@@ -200,19 +210,28 @@ function cantidad_ahorrada_porcentaje($precio, $producto){
         );
     
         $slider_productos = new WP_Query($arg);
-        echo " <div class='swiper-container'>";
-        echo "<ul class='swiper-wrapper'>";
+        echo " <div class='swiper-container'>";?>
+            <div class="container_destacado">
+                <a class='Productos_destacado_semanal'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Producto destacado de la Semana
+
+                <a>
+            </div>
+           <?php
+           echo "<ul class='swiper-wrapper'>";
          while($slider_productos->have_posts()):
-            
-           $slider_productos->the_post();
-           ?>
-                <li class="swiper-slide">
-                   <a href="<?php the_permalink();?>">
-                       <?php the_post_thumbnail('shop_catalog');?>
-                       <?php the_title('<h4>','</h4>');?>
-                   </a>
-                </li>
-           <?php 
+              $slider_productos->the_post(); ?>
+                    <li class="swiper-slide">
+                       <a href="<?php the_permalink();?>">
+                           <?php the_post_thumbnail('shop_catalog');?>
+                           <?php the_title('<h4 class="titulo_producto_destacado">','</h4>');?>
+                       </a>
+                    </li>
+               <?php 
            
          endwhile; wp_reset_postdata();
          echo "</ul>";

@@ -8,9 +8,7 @@
 /**
  * Assign the Storefront version to a var
  */
-
-
- $theme              = wp_get_theme( 'storefront' );
+$theme              = wp_get_theme( 'storefront' );
 $storefront_version = $theme['Version'];
 
 /**
@@ -69,16 +67,6 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
 		require 'inc/nux/class-storefront-nux-starter-content.php';
 	}
 }
-
-function bootstrap(){
-	wp_enqueue_style('swippercss','https://unpkg.com/swiper/swiper-bundle.min.css' , array(), '4.5.0', 'all');
-    wp_enqueue_style('bootstra','https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' , array(), '4.5.0', 'all');
-	wp_enqueue_script( 'popper','https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', array('jquery'), '4.5.0', true );
-    wp_enqueue_script( 'bootstrap','https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js', array('popper'), '4.5.0', true );
-   
-}
-
-add_action( 'wp_enqueue_scripts', 'bootstrap');
 
 /**
  * Note: Do not add any custom code here. Please use a custom plugin so that your customizations aren't lost during updates.

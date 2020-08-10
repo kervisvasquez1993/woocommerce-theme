@@ -29,12 +29,76 @@
 .site-header .col-full{
   
 }
+.container_destacado{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background: blue;
+}
+.Productos_destacado_semanal{
+  position: relative;
+  padding: 25px 30px;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .1);
+  box-shadow: 0 5px 5px rgba(0,0,0,.2); 
+}
 
+.Productos_destacado_semanal::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: rgba(255,255,255,.1);
+}
+
+.Productos_destacado_semanal::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+  transition: 0.5s;
+
+}
+
+.Productos_destacado_semanal span{
+  position: absolute;
+  display: block;
+  transition: 0.5s ease;
+
+}
+
+.Productos_destacado_semanal:hover:after{
+  left: 100%;
+}
+
+
+.Productos_destacado_semanal span:nth-child(1){
+  top:0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+}
+
+.Productos_destacado_semanal span:nth-child(1):hover{
+  width: 100%;
+  transform: translateX(100%);
+}
 .slider-cabecera{
   min-height: 20vh !important;
   background: grey;
   
 }
+
+
  .menu-item-type-custom a {
   font-size: 25px;
   color: black;

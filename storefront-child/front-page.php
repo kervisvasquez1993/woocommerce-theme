@@ -11,39 +11,29 @@
  *
  * @package storefront
  */
-$imagenes = get_post_meta( get_the_ID(), '',true );
+$imagenes = get_post_meta( get_the_ID(), 'slider_front',true );
+
+
 get_header(); ?>
 </div>
 
 <div id="carouselExampleCaptions" class="carousel slide slider-cabecera" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="<?php the_field('imagen-producto1');?>" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="titulo_principal">First slide label</h5>
-            <p class="parrafo">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="<?php the_field('imagen-producto2');?>" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="titulo_principal">Second slide label</h5>
-            <p class="parrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="<?php the_field('imagen-producto3');?>" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="titulo_principal">Third slide label</h5>
-            <p class="parrafo">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
-        </div>
-      </div>
+           <ul class="carousel-indicators">
+                     <?php $cnt=0; $slider = 0; foreach($imagenes as  $imagen):?>
+                     <li data-target="#carousel-1" data-slide-to="<?php echo $slider?>" class="<?php if($cnt==0){ echo 'active'; }?>"></li>
+                        <?php $cnt++; $slider++; endforeach; ?>
+            </ul>
+            <div class="carousel-inner">
+              <?php $cnt=0; foreach($imagenes as  $imagen):?>
+                  <div class="carousel-item  <?php if($cnt==0){ echo 'active'; }?>">
+                      <img src="<?php echo $imagen['image']; ?>"  class="" alt="Los Angeles">
+                      <div class="carousel-caption">
+                        <h3 class="titulo_slider"><?php echo $imagen['title'];?></h3>
+                        <p class="descripcion_slider"><?php echo $imagen['description'];?></p>
+                      </div>
+                  </div>
+               <?php $cnt++; endforeach; ?> 
+              </div>
       <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>

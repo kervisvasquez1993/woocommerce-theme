@@ -806,4 +806,4 @@ function yourprefix_register_rest_api_box() {
 }
 
 
-echo "hola desde php";
+add_filter( 'wp_image_editors', 'change_graphic_lib' ); function change_graphic_lib($array) { return array( 'WP_Image_Editor_GD', 'WP_Image_Editor_Imagick' ); }

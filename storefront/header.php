@@ -24,25 +24,6 @@
 
 <?php do_action( 'storefront_before_site' ); ?>
 
-				           <div class="header1 header-iconos ">
-            	                 
-                 
-				                  
-                                        <span class="wrapp-icon">
-				                           <img  class="logo-header" src="<?php echo get_stylesheet_directory_uri().'/assets/telefono-header.png';?>" alt="">
-				                        	<p class="font-header"> (+58) 424 4444161 </p>
-				                        </span>
-				                        
-				                        
-										<span class="
-										">
-				                           <img  class="logo-header" src="<?php echo get_stylesheet_directory_uri().'/assets/correo-header.png';?>" alt="">
-				                           <p class="font-header"> atencion@dynamics.com </p>
-				                        </span>
-				                
-
-                            </div>
-
 <div id="page" class="hfeed site">
 	<?php do_action( 'storefront_before_header' ); ?>
 
