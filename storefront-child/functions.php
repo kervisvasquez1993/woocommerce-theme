@@ -55,6 +55,18 @@ function nuevo_footer(){
     echo "</div>";
 }
 
+
+//liminar contenido del store from
+
+
+add_action( 'init', 'we_eliminar_homepage_bienvenida' );
+function we_eliminar_homepage_bienvenida() {
+     
+     remove_action( 'homepage', 'storefront_featured_products', 40 );
+     remove_action( 'homepage', 'storefront_popular_products', 50 );
+     remove_action( 'homepage', 'storefront_on_sale_products', 60 );
+     remove_action( 'homepage', 'storefront_best_selling_products', 70 );
+}
 // crear nueva seccion en el home 
 
 add_action( 'homepage', 'nueva_section_home', 30 );
