@@ -220,10 +220,9 @@ function cantidad_ahorrada_porcentaje($precio, $producto){
             ),
     
         );
-    
-        $slider_productos = new WP_Query($arg);
-        echo " <div class='swiper-container'>";?>
-            <div class="container_destacado">
+        $slider_productos = new WP_Query($arg); ?>
+
+<div class="container_destacado">
                 <a class='Productos_destacado_semanal'>
                     <span></span>
                     <span></span>
@@ -233,20 +232,24 @@ function cantidad_ahorrada_porcentaje($precio, $producto){
 
                 <a>
             </div>
+            <br>
+            <br><br><br>
+         <div class='swiper-container'>
+            
            <?php
-           echo "<ul class='swiper-wrapper'>";
-         while($slider_productos->have_posts()):
-              $slider_productos->the_post(); ?>
-                    <li class="swiper-slide">
-                       <a href="<?php the_permalink();?>">
-                           <?php the_post_thumbnail('shop_catalog');?>
-                           <?php the_title('<h4 class="titulo_producto_destacado">','</h4>');?>
-                       </a>
-                    </li>
-               <?php 
-           
-         endwhile; wp_reset_postdata();
-         echo "</ul>";
+        echo "<ul class='swiper-wrapper'>";
+             while($slider_productos->have_posts()):
+                  $slider_productos->the_post(); ?>
+                        <li class="swiper-slide">
+                           <a href="<?php the_permalink();?>">
+                               <?php the_post_thumbnail('shop_catalog');?>
+                               <?php the_title('<h4 class="titulo_producto_destacado">','</h4>');?>
+                           </a>
+                        </li>
+                   <?php 
+               
+             endwhile; wp_reset_postdata();
+        echo "</ul>";
          
          ?>
            <!--navegador-->

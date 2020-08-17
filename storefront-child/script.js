@@ -1,5 +1,7 @@
 
 var elmento2 = document.querySelector('.swiper-container')
+
+
 var swiper = new Swiper(elmento2, {
     
     breakpoints: {
@@ -26,5 +28,5 @@ var swiper = new Swiper(elmento2, {
         prevEl: '.swiper-button-prev',
       },
     });
-
-    console.log('holaa')
+ 
+  console.log('holaa')

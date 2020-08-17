@@ -12,6 +12,7 @@
  * @package storefront
  */
 $imagenes = get_post_meta( get_the_ID(), 'slider_front',true );
+$logos = get_post_meta( get_the_ID(), 'logos',true );
 
 
 get_header(); ?>
@@ -66,7 +67,42 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-<?php
 
+
+<div class="container_destacado logos">
+                <a class='Productos_destacado_semanal'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Marcas conque trabajamos
+
+                <a>
+</div>
+            <br>
+            <br><br><br>
+     
+            
+          <div class="body_card">
+           <?php
+            foreach($logos as $logo): ?>
+                        <li class="card">
+                              
+                            <div class="imglg">
+                              <img   src="<?php echo $logo['image']?>" alt="<?php echo $logo['image_caption'];?>">
+                            </div>
+                              
+                            <div class="contentBx">
+                               <h4 >
+                                  <?php echo $logo['title'];?>
+                               </h4>
+                            </div>
+                        </li>
+                   <?php 
+            endforeach;
+          echo "</div>";
+
+               
+         
 
 get_footer();

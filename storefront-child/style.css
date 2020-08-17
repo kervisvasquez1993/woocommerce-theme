@@ -44,6 +44,7 @@
   overflow: hidden;
   background: rgba(255, 255, 255, .1);
   box-shadow: 0 5px 5px rgba(0,0,0,.2); 
+  text-align: center;
 }
 
 .Productos_destacado_semanal::before{
@@ -100,14 +101,22 @@
   width: 100%;
   transform: translateX(100%);
 }
-
+.columns-3{
+  display: none;
+}
+li.swiper-slide{
+  list-style-type: none !important;
+}
 .Productos_destacado_semanal span:nth-child(3){
   bottom:0;
   right: 0;
   width: 0;
   height: 1px;
   background: grey;
+  
 }
+
+
 
 .Productos_destacado_semanal:hover span:nth-child(3){
   width: 100%;
@@ -264,6 +273,89 @@
     font-weight: bold;
 }
 
+.body_card{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items:space-around;
+  background: grey;
+  opacity: 0.9;
+  min-height: 100vh;
+  padding: 30px;
+
+}
+
+.body_card .card{
+  position: relative;
+  width: 220px;
+  height: 320px;
+  background: #D0D9AB;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.body_card .card::before{
+  content : '';
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #D99C96;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.body_card .card:hover::before{
+  transform: skewY(390deg);
+  top: -70%;
+}
+.body_card .card::after{
+  content: 'Mastermix';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 3rem;
+  color: black;
+  opacity: 0.1;
+}
+
+.card .imglg{
+ position: relative;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding-top: 20px;
+ z-index: 1;
+
+}
+
+.card .imglg img{
+  max-width: 100%;
+  transition: 0.5s;
+}
+.card:hover .imglg img{
+  max-width: 50%;
+
+}
+
+.card .contentBx{
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.card .contentBx  h4{
+  font-size: 28px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 @media (min-width: 768px){
   .header1{
    justify-content: flex-end;
