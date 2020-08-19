@@ -280,7 +280,7 @@ li.swiper-slide{
   align-items:space-around;
   background: grey;
   opacity: 0.9;
-  min-height: 100vh;
+  min-height: 40vh;
   padding: 30px;
 
 }
@@ -288,9 +288,9 @@ li.swiper-slide{
 .body_card .card{
   position: relative;
   width: 220px;
-  height: 320px;
-  background: #D0D9AB;
-  border-radius: 20px;
+  height: 220px;
+ 
+ 
   overflow: hidden;
 }
 .body_card .card::before{
@@ -299,8 +299,8 @@ li.swiper-slide{
   top: -50%;
   width: 100%;
   height: 100%;
-  background: #D99C96;
-  transform: skewY(345deg);
+ 
+
   transition: 0.5s;
 }
 

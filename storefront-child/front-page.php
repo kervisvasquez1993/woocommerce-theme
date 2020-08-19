@@ -88,15 +88,11 @@ get_header(); ?>
             foreach($logos as $logo): ?>
                         <li class="card">
                               
-                            <div class="imglg">
+                            
                               <img   src="<?php echo $logo['image']?>" alt="<?php echo $logo['image_caption'];?>">
-                            </div>
+                           
                               
-                            <div class="contentBx">
-                               <h4 >
-                                  <?php echo $logo['title'];?>
-                               </h4>
-                            </div>
+                            
                         </li>
                    <?php 
             endforeach;
